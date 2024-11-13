@@ -22,9 +22,9 @@ def get_openai_response(article_text):
     prompt = (
         "Przetwórz poniższy tekst artykułu na kod HTML. "
         "Użyj odpowiednich tagów HTML, takich jak <h1>, <p>, itp., aby dobrze strukturyzować treść. "
-        "W miejscach, gdzie sugerowane są grafiki, dodaj tag <img src='image_placeholder.jpg' alt='Opis grafiki'>. "
-        "Dodaj podpisy pod obrazkami, jeśli są konieczne, używając tagu <figcaption>. "
-        "Zwróć tylko zawartość pomiędzy <body> i </body>. "
+        "W miejscach, gdzie uważasz że pasowałaby grafika, dodaj tag <img src='image_placeholder.jpg' alt='Opis grafiki'>. "
+        "Znacznik alt każdego obraka powinien zawierać dokładny prompt, który możemy użyć do wygenerowania grafiki."
+        "Nie dodawaj kodu CSS ani JavaScript. Zwrócony kod powinien zawierać wyłącznie zawartość do wstawienia pomiędzy tagami <body> i </body>. Nie dołączaj znaczników <html>, <head> ani <body>."
         "Oto treść artykułu:\n\n" + article_text
     )
 
