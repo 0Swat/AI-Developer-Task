@@ -11,7 +11,6 @@ def load_article(filename="article.txt"):
         print(f"Błąd: Plik '{filename}' nie został znaleziony.")
         return None
 
-
 def get_openai_response(article_text):
     # load .env 
     load_dotenv()
@@ -42,11 +41,20 @@ def get_openai_response(article_text):
         return response.choices[0].message['content'].strip()
     except Exception as e:
         return f"Błąd: {e}"
+    
+def save_article(content, filename="artykul.html"):
+    try:
+        with open(filename, 'w') as f:
+            f.write(content)
+        print(f"Artykuł został pomyślnie zapisany do pliku {filename}.")
+    except Exception as e:
+        print(f"Błąd podczas zapisywania artykułu: {e}")
+
 
 def main():
     article_text = load_article()
     response = get_openai_response(article_text)
-    print(response)
+    save_article(response)
 
 if __name__ == '__main__':
     main()
