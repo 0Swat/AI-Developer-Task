@@ -37,6 +37,18 @@ W folderze `test` znajdują się cztery pliki HTML wygenerowane przez różne mo
 
 - **artykul_gtp4.html**: Model GPT-4 generował dobrze zorganizowany kod HTML bez dodatkowych zbędnych znaczników. Wygenerowane prompty były szczegółowe i odpowiednie dla zamierzonego użycia, ale czas przetwarzania był dłuższy niż w przypadku GPT-3.5.
 
+### Instrukcje uruchomienia
+1. **Skonfiguruj klucz API**: Upewnij się, że masz dostęp do API OpenAI. Klucz API możesz ustawić jako zmienną środowiskową tworząc plik środowiskowy `.env` oraz dodając w nim klucz API w zmiennej `OPENAI_API_KEY`.
+2. **Zainstaluj odpowiednie biblioteki**: Zainstaluj brakujące biblioteki, jeżeli wystąpi taka potrzeba:
+   ```bash
+   pip install openai
+   ```
+4. **Uruchom skrypt**:
+   ```bash
+   python main.py
+   ```
+   Aplikacja połączy się z API, przetworzy artykuł i zapisze wynikowy kod HTML w pliku `artykul.html`.
+
 ### Instrukcje do podglądu artykułu
 1. Otwórz plik `podglad.html` w przeglądarce, aby zobaczyć pełny podgląd artykułu z osadzonym HTML-em.
 2. Możesz również wkleić wygenerowany HTML do `szablon.html`, aby zobaczyć, jak wygląda w ramach szablonu.
